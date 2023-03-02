@@ -24,11 +24,18 @@ class person():
                     "You may have entered a past date, please note that the machine can only move objects into the future! Try again, please ")
             else:
                 return tdelta
+class time_machine():
+    def request(self, who, where, tdelta):
+        print('I am sending a ', who, ' to ', where,' ', str(tdelta), ' days forward')
+    def result(self):
+        print('Sending was successful')
 
 def __main__():
     print("Pay attention! The time machine moves objects only into the future")
     a = person()
+    b = time_machine()
     who = a.wish()
     where = a.place(who)
     when = a.time(who, where)
-    print('Time machine is sending a ', who, ' to ', where, ' ', str(when), ' days forward')
+    b.request(who, where, when)
+    b.result()
