@@ -1,19 +1,24 @@
 import datetime
+
 class wish():
     """The class that generates wish of a person through dialogue"""
+
     def subject(self) -> str:
         """The method that determines a subject of sending"""
+
         print('I want to send (write who or what) ')
         who = input()
         return who
     def place(self, who: str) -> str:
         """The method that determines a place of sending"""
+
         print('I want to send a ', who, ' to (write anywhere in the world) ')
         where = input()
         return where
     def time(self, who: str, where: str) -> int:
         """The method that determines the date of sending
         and calculates the difference between it and the present time"""
+
         while (1):
             print(
                 'I want to send a ', who,' to ', where, ' in (write the date you want in the '
@@ -33,11 +38,13 @@ class wish():
                 return tdelta
 class time_machine():
     """The class that simulates actions of the time machine"""
+
     def request(self, who: str, where: str, tdelta: int):
         """The method that generates the sending message"""
         print('I am sending a ', who, ' to ', where,' ', str(tdelta), ' days forward')
     def result(self):
         """The method that sends message about successful sending"""
+
         print('Sending was successful')
 
 def __main__():
@@ -50,4 +57,3 @@ def __main__():
     b.request(who, where, when)
     b.result()
 
-help(wish)
